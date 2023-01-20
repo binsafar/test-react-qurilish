@@ -1,0 +1,38 @@
+.header {
+  background: #51438f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.header_logo {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-left: 38px;
+}
+.header_right {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  color: #fff;
+}
+.header_right_photo {
+  height: 42px;
+  width: 42px;
+  border-radius: 8px;
+}
+.header_right_info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+/* .header_right_name {
+} */
+.header_right_role {
+  font-size: 14px;
+  margin-top: 4px;
+}
