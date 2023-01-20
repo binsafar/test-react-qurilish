@@ -1,0 +1,36 @@
+.login_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12%;
+  text-align: center;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin-right: 200px;
+}
+.login_form_h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #838383;
+}
+
+.login_form {
+  margin-top: 44px;
+  width: 100%;
+}
+
+.login_input {
+  margin-top: 20px;
+  width: 100%;
+}
+.login_btn {
+  margin-top: 36px;
+  width: 100%;
+}
