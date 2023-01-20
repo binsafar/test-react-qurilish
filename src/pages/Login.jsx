@@ -19,14 +19,10 @@ const Login = () => {
 
         <Formik
           initialValues={{ name: "", password: "", contacts: "" }}
-          validate={(values) => {
-            const errors = {};
-            if (!values.name || !values.password) {
-              errors.name = "invalid name";
-            }
-            console.log(errors);
-            return errors;
-          }}
+          // validate={(values) => {
+          //   const errors = {};
+          //   return errors;
+          // }}
           onSubmit={(values, { setSubmitting }) => {
             if (values.name === "name" && values.password === "name") {
               console.log(values);
