@@ -1,0 +1,38 @@
+.nav_container {
+  width: 264px;
+  height: 93.3vh;
+  display: flex;
+  flex-direction: column;
+  background: #51438f;
+}
+.nav_link {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  height: 47px;
+  padding: 12px 0 12px 36px;
+}
+.nav_link:hover {
+  color: #fff;
+  background-color: #7668b4;
+}
+.nav_active {
+  background: #6253a4;
+  border-left: 2px solid #b2a8de;
+}
+.nav_btn {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #fff;
+  background: #51438f;
+  border: none;
+  text-align: left;
+}

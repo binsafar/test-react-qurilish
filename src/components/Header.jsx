@@ -1,4 +1,5 @@
-import defaultImg from "../../assets/img/default.png";
+import defaultImg from "../assets/img/default.png";
+import { DownIcon } from "../assets/icons/icons";
 import "./css/header.css";
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
           <p className={"header_right_name"}>Luke Asote</p>
           <p className={"header_right_role"}>Admin for Associations</p>
         </div>
-        <i className="bi bi-caret-down-fill"></i>
+        <DownIcon />
       </aside>
     </header>
   );

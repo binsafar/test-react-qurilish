@@ -27,7 +27,7 @@ const Login = () => {
             if (values.name === "name" && values.password === "name") {
               console.log(values);
               localStorage.setItem("login", true);
-              navigate("/dashboard");
+              navigate("/dashboard/members");
             } else {
             }
             setSubmitting(false);

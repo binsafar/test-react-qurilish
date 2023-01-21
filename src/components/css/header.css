@@ -19,6 +19,7 @@
   align-items: center;
   margin-right: 24px;
   color: #fff;
+  cursor: pointer;
 }
 .header_right_photo {
   height: 42px;
@@ -29,10 +30,13 @@
   display: flex;
   flex-direction: column;
   margin-left: 8px;
+  margin-right: 16px;
 }
-/* .header_right_name {
-} */
+.header_right_name {
+  margin-bottom: 0;
+}
 .header_right_role {
   font-size: 14px;
   margin-top: 4px;
+  margin-bottom: 0;
 }
