@@ -17,18 +17,18 @@ const Dashboard = () => {
   let users = [
     {
       id: 1,
-      photo: "",
+      photo: undefined,
       name: "George Lindelof",
-      mobile: "+4 315 23 62",
+      mobile: "+43152362",
       email: "carlsen@armand.io",
       status: "true",
       operation: "2 min ago",
     },
     {
       id: 2,
-      photo: "",
+      photo: undefined,
       name: "George Lindelof",
-      mobile: "+4 315 23 62",
+      mobile: "+43152362",
       email: "carlsen@armand.io",
       status: "false",
       operation: "2 min ago",

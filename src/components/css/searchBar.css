@@ -27,7 +27,6 @@
 }
 .search_link:hover {
   color: #333;
-  transition: 0.2s ease-in;
 }
 .search_link_active {
   font-family: "Inter";
@@ -38,7 +37,6 @@
   text-decoration: none;
   color: #000;
   border-bottom: 3px solid #51438f;
-  transition: 0.1s ease-in;
 }
 
 .search_add_btn {

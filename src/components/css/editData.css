@@ -1,0 +1,39 @@
+.edit_form {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+}
+.edit_input {
+  width: 100%;
+  height: 43px;
+  background: #ffffff;
+  border: 1px solid #b0b7c3;
+  border-radius: 7px;
+  margin-bottom: 16px;
+}
+.edit_input:focus {
+  outline: 1px solid #4276fb;
+}
+.edit_check_label {
+  position: absolute;
+  left: 16px;
+}
+.edit_check {
+  margin-bottom: 16px;
+}
+.edit_actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.edit_upload {
+  border: 1px #888 dashed;
+  width: 76px;
+  height: 76px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

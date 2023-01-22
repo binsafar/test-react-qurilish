@@ -1,0 +1,32 @@
+.modal_info {
+  width: 554px;
+  height: 158px;
+  background: #fefefe;
+  border-radius: 6px;
+}
+.modal_header {
+  border: none !important;
+}
+.modal_body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal_title {
+  margin-left: 56px;
+}
+.modal_name {
+  margin-left: 4px;
+  margin-right: 4px;
+  border-bottom: 0.1px solid #333;
+}
+.modal_actions {
+  display: flex;
+}
+.modal_btn {
+  width: 97px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -2,7 +2,7 @@
   "members": [
     {
       "id": 1,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -29,7 +29,7 @@
     },
     {
       "id": 4,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -38,7 +38,7 @@
     },
     {
       "id": 5,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -47,7 +47,7 @@
     },
     {
       "id": 6,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -58,7 +58,7 @@
   "admins": [
     {
       "id": 1,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -67,7 +67,7 @@
     },
     {
       "id": 2,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -76,7 +76,7 @@
     },
     {
       "id": 3,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -85,7 +85,7 @@
     },
     {
       "id": 4,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -94,7 +94,7 @@
     },
     {
       "id": 5,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
@@ -103,7 +103,7 @@
     },
     {
       "id": 6,
-      "photo": "",
+      "photo": [],
       "name": "George Lindelof",
       "mobile": "+4 315 23 62",
       "email": "carlsen@armand.io",
