@@ -60,7 +60,7 @@ function SearchBar() {
               <input
                 className="search_input"
                 placeholder="Email"
-                type="email"
+                type="text"
                 name="email"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -86,6 +86,7 @@ function SearchBar() {
                 <option value="" disabled hidden>
                   Select status
                 </option>
+                <option value="All">All</option>
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
               </select>

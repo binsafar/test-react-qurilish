@@ -14,6 +14,26 @@ const Dashboard = () => {
     }
   }, []);
 
+  let users = [
+    {
+      id: 1,
+      photo: "",
+      name: "George Lindelof",
+      mobile: "+4 315 23 62",
+      email: "carlsen@armand.io",
+      status: "true",
+      operation: "2 min ago",
+    },
+    {
+      id: 2,
+      photo: "",
+      name: "George Lindelof",
+      mobile: "+4 315 23 62",
+      email: "carlsen@armand.io",
+      status: "false",
+      operation: "2 min ago",
+    },
+  ];
   return (
     <>
       <Header />
@@ -22,7 +42,7 @@ const Dashboard = () => {
         <br />
         <div style={{ width: "82%" }}>
           <SearchBar />
-          <TableList />
+          <TableList users={users} />
         </div>
       </div>
     </>

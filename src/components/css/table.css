@@ -3,3 +3,18 @@
   width: 42px;
   border-radius: 8px;
 }
+.table_td {
+  text-align: center;
+}
+.table_active {
+  border-radius: 8px;
+  width: 72px;
+  padding: 4px 8px;
+  background: rgb(213, 247, 164) !important;
+}
+.table_inactive {
+  border-radius: 8px;
+  width: 72px;
+  padding: 4px 8px;
+  background: rgb(240, 178, 178) !important;
+}
