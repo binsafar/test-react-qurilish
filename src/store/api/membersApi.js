@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getAllMembers = (memberAdmin = "members") => {
   return axios
-    .get("http://localhost:8080/" + memberAdmin + "/")
+    .get("http://localhost:8080/" + memberAdmin)
     .then((res) => {
       return res.data;
     })
@@ -11,7 +11,7 @@ export const getAllMembers = (memberAdmin = "members") => {
 
 export const createMember = (data, memberAdmin = "members") => {
   return axios
-    .post("http://localhost:8080/" + memberAdmin + "/", data)
+    .post("http://localhost:8080/" + memberAdmin, data)
     .catch((err) => console.log(err));
 };
 

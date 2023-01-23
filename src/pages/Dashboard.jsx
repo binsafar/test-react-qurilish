@@ -19,7 +19,6 @@ const Dashboard = () => {
     dispatch({ type: GET_MEMBERS });
   }, []);
 
-  console.table(members);
   return (
     <>
       <Header />

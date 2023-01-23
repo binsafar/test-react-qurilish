@@ -5,17 +5,26 @@ import { Formik } from "formik";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { createMember, updateMember } from "../store/api/membersApi";
+import { useDispatch } from "react-redux";
+import { ADD_MEMBER, UPDATE_MEMBER } from "../store/actions/membersActions";
+
 import "./css/editData.css";
 
 function EditData({ data, type }) {
   const [modal, setModal] = useState(false);
+  const dispatch = useDispatch();
 
   const editRequest = (values) => {
     if (type === "edit")
-      updateMember({ ...values, id: data.id, phone: values.phone.toString() });
+      dispatch({
+        type: UPDATE_MEMBER,
+        payload: { ...values, id: data.id, phone: values.phone.toString() },
+      });
     else {
-      createMember({ ...values, phone: values.phone.toString() });
+      dispatch({
+        type: ADD_MEMBER,
+        payload: { ...values, phone: values.phone.toString() },
+      });
     }
     setModal(false);
   };
@@ -82,6 +91,7 @@ function EditData({ data, type }) {
                     value={values.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    autoFocus
                     required
                   />
                 </label>

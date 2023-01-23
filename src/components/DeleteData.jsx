@@ -4,13 +4,19 @@ import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import "./css/deleteData.css";
+import { useDispatch } from "react-redux";
+import { DELETE_MEMBER, GET_MEMBERS } from "../store/actions/membersActions";
 
 function DeleteData({ id, name }) {
   const [modal, setModal] = useState(false);
+  const dispatch = useDispatch();
 
   const deleteRequest = () => {
+    dispatch({ type: DELETE_MEMBER, payload: id });
+    dispatch({ type: GET_MEMBERS });
     setModal(false);
   };
+
   return (
     <>
       <button onClick={() => setModal(true)} className="btn">
