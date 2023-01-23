@@ -26,6 +26,7 @@ function EditData({ data, type }) {
       );
       dispatch({
         type: GET_MEMBERS,
+        payload: `${params.name === "members" ? "members" : "admins"}`,
       });
     } else {
       createMember(
