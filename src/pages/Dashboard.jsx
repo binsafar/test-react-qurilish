@@ -4,9 +4,12 @@ import { useNavigate } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import SearchBar from "../components/SearchBar";
 import TableList from "../components/TableList";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const store = useSelector((store) => store);
+  console.log("store", store);
 
   useEffect(() => {
     if (!localStorage.getItem("login")) {

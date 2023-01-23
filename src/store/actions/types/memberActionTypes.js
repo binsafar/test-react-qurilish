@@ -1,4 +1,0 @@
-export const CREATE_MEMBER = "CREATE_MEMBER";
-export const GET_MEMBERS = "GET_MEMBERS";
-export const UPDATE_MEMBERS = "UPDATE_MEMBERS";
-export const DELETE_MEMBER = "DELETE_MEMBER";

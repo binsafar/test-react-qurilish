@@ -1,40 +1,16 @@
-import {
-  CREATE_MEMBER,
-  GET_MEMBERS,
-  UPDATE_MEMBERS,
-  DELETE_MEMBER,
-} from "../actions/memberActions";
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  members: [],
-};
+const membersReducers = createSlice({
+  name: "members",
+  initialState: {
+    members: null,
+  },
+  reducers: {
+    getMembers: (state, action) => {
+      state.members = action.payload;
+    },
+  },
+});
 
-const membersReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    // Set loading
-    case CREATE_MEMBER:
-      return {
-        ...state,
-        members: payload,
-      };
-    case GET_MEMBERS:
-      return {
-        ...state,
-        members: payload,
-      };
-    case UPDATE_MEMBERS:
-      return {
-        ...state,
-        members: payload,
-      };
-    case DELETE_MEMBER:
-      return {
-        ...state,
-        members: payload,
-      };
-    default:
-      break;
-  }
-};
-
-export default membersReducer;
+export const { getMembers } = membersReducers.actions;
+export default membersReducers.reducer;
