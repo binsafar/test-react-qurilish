@@ -18,9 +18,9 @@ export const createMember = (data, memberAdmin = "members") => {
     .catch((err) => console.log(err));
 };
 
-export const updateMember = (data, memberAdmin = "members") => {
+export const updateMember = (id, data, memberAdmin = "members") => {
   return axios
-    .put("http://localhost:8080/" + memberAdmin + "/" + data.id, data)
+    .put("http://localhost:8080/" + memberAdmin + "/" + id, data)
     .then((res) => {
       return res.data;
     })

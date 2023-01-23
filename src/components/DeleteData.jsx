@@ -6,13 +6,14 @@ import Button from "react-bootstrap/Button";
 import "./css/deleteData.css";
 import { useDispatch } from "react-redux";
 import { DELETE_MEMBER, GET_MEMBERS } from "../store/actions/membersActions";
+import { deleteMember } from "../store/api/membersApi";
 
 function DeleteData({ id, name }) {
   const [modal, setModal] = useState(false);
   const dispatch = useDispatch();
 
   const deleteRequest = () => {
-    dispatch({ type: DELETE_MEMBER, payload: id });
+    deleteMember(id);
     dispatch({ type: GET_MEMBERS });
     setModal(false);
   };

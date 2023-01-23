@@ -6,24 +6,29 @@ import { Formik } from "formik";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
-import { ADD_MEMBER, UPDATE_MEMBER } from "../store/actions/membersActions";
+import {
+  ADD_MEMBER,
+  GET_MEMBERS,
+  UPDATE_MEMBER,
+} from "../store/actions/membersActions";
 
 import "./css/editData.css";
+import { createMember, updateMember } from "../store/api/membersApi";
 
 function EditData({ data, type }) {
   const [modal, setModal] = useState(false);
   const dispatch = useDispatch();
 
   const editRequest = (values) => {
-    if (type === "edit")
+    if (type === "edit") {
+      updateMember(data.id, values);
       dispatch({
-        type: UPDATE_MEMBER,
-        payload: { ...values, id: data.id, phone: values.phone.toString() },
+        type: GET_MEMBERS,
       });
-    else {
+    } else {
+      createMember(values);
       dispatch({
-        type: ADD_MEMBER,
-        payload: { ...values, phone: values.phone.toString() },
+        type: GET_MEMBERS,
       });
     }
     setModal(false);
