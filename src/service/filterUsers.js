@@ -3,18 +3,16 @@ const filterUsers = (name, email, phone, status, users) => {
     (user) =>
       user.name.startsWith(name) &&
       user.email.startsWith(email) &&
-      user.phone.startsWith(phone)
+      user.phone.toString().startsWith(phone)
   );
-
-  if (status == "All") {
+  console.log(filter);
+  console.log(status);
+  if (status === "All") {
     return filter;
-  } else if (status == "Active") {
-    filter.filter((user) => user.status == true);
-    return filter;
-  } else if (status == "Inactive") {
-    filter.filter((user) => user.status == false);
-    return filter;
-  } else {
-  }
+  } else if (status === "Active") {
+    return filter.filter((user) => user.status === true);
+  } else if (status === "Inactive") {
+    return filter.filter((user) => user.status === false);
+  } else return;
 };
 export default filterUsers;

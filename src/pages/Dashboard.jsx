@@ -11,7 +11,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const params = useParams();
-  const members = useSelector((store) => store.membersReducer.members);
+  const members = useSelector((store) => store.membersReducer.membersFilter);
 
   useEffect(() => {
     if (!localStorage.getItem("login")) {

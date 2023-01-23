@@ -2,7 +2,7 @@ import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import createSagaMiddleware from "@redux-saga/core";
 import membersReducer from "./reducer/membersReducer";
 
-import { watchGetMemberSaga } from "./sagas/memberSaga";
+import { watchFilterMembersSaga, watchGetMemberSaga } from "./sagas/memberSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -12,3 +12,4 @@ export default configureStore({
 });
 
 sagaMiddleware.run(watchGetMemberSaga);
+sagaMiddleware.run(watchFilterMembersSaga);

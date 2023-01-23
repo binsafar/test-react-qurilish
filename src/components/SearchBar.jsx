@@ -5,6 +5,7 @@ import { FILTER_MEMBER } from "../store/actions/membersActions";
 import EditData from "./EditData";
 
 import "./css/searchBar.css";
+import filterUsers from "../service/filterUsers";
 
 function SearchBar() {
   const params = useParams();
@@ -41,16 +42,15 @@ function SearchBar() {
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
-            dispatch({
-              type: FILTER_MEMBER,
-              payload: {
-                name: values.name,
-                email: values.email,
-                phone: values.phone,
-                status: values.status,
-                users,
-              },
-            });
+            let res = filterUsers(
+              values.name,
+              values.email,
+              values.phone,
+              values.status,
+              users
+            );
+            dispatch({ type: FILTER_MEMBER, payload: res });
+            console.log(res);
             setSubmitting(false);
           }}
         >
