@@ -2,25 +2,42 @@ import { useState } from "react";
 import { EditIcon, UploadIcon } from "../assets/icons/icons";
 import { Modal } from "react-bootstrap";
 import { Formik } from "formik";
+
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import { createMember, updateMember } from "../store/api/membersApi";
 import "./css/editData.css";
 
-function EditData({ data }) {
+function EditData({ data, type }) {
   const [modal, setModal] = useState(false);
+
   const editRequest = (values) => {
+    if (type === "edit")
+      updateMember({ ...values, id: data.id, phone: values.phone.toString() });
+    else {
+      createMember({ ...values, phone: values.phone.toString() });
+    }
     setModal(false);
   };
+
   return (
     <>
-      <button onClick={() => setModal(true)} className="btn">
-        <EditIcon />
-      </button>
-      <Modal
-        centered
-        show={modal}
-        // show={true}
-        onHide={() => setModal(false)}
-      >
+      {/* editing modal */}
+      {type && type === "edit" && (
+        <button onClick={() => setModal(true)} className="btn">
+          <EditIcon />
+        </button>
+      )}
+
+      {/* add member modal */}
+      {type && type === "add" && (
+        <button onClick={() => setModal(true)} className="btn">
+          Add member
+        </button>
+      )}
+
+      {/* modal body */}
+      <Modal centered show={modal} onHide={() => setModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Add member</Modal.Title>
         </Modal.Header>
@@ -30,8 +47,9 @@ function EditData({ data }) {
               name: data.name || "",
               phone: data.phone || "",
               email: data.email || "",
-              status: data.status || "",
+              status: data.status || false,
               photo: data.photo || "",
+              operation: "2 min ago",
             }}
             validate={(values) => {
               const errors = {};
@@ -72,7 +90,7 @@ function EditData({ data }) {
                   <br />
                   <input
                     id="number"
-                    type="text"
+                    type="number"
                     name="phone"
                     className="edit_input"
                     onChange={handleChange}
@@ -97,21 +115,31 @@ function EditData({ data }) {
                 <div className="form-check form-switch">
                   <label
                     className="form-check-label edit_check_label"
-                    htmlFor="flexSwitchCheckChecked"
+                    htmlFor="status_check"
                   >
                     Status
                   </label>
                   <br />
                   <input
-                    id="flexSwitchCheckChecked"
+                    id="status_check"
                     name="status"
                     type="checkbox"
                     value={values.status}
+                    checked={values.status}
+                    disabled={values.status}
+                    // value={true}
                     className="form-check-input edit_check"
-                    onChange={handleChange}
+                    onChange={(event) => console.log(event.target.value)}
+                    // onChange={handleChange}
                     onBlur={handleBlur}
                   />
                 </div>
+                <Form.Check
+                  onChange={(e) => console.log(e)}
+                  type="switch"
+                  id="custom-switch"
+                  label="Check this switch"
+                />
                 <label htmlFor="inputTag">
                   Photo
                   <div className="edit_upload_icon">

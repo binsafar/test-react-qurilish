@@ -4,9 +4,6 @@ import DeleteData from "./DeleteData";
 import "./css/table.css";
 
 function TableList({ users }) {
-  const editData = () => {};
-  const deleteData = () => {};
-
   return (
     <>
       <table className="table table-borderless">
@@ -30,22 +27,22 @@ function TableList({ users }) {
                     <img className="table_photo" src={profilePhoto} alt="" />
                   </th>
                   <td>{item.name}</td>
-                  <td>{item.mobile}</td>
+                  <td>{item.phone}</td>
                   <td>{item.email}</td>
                   <td>
                     <p
                       className={`${
-                        item.status === "true"
+                        item.status === true
                           ? "table_active text-success"
                           : "table_inactive text-danger"
                       } table_td`}
                     >
-                      {item.status === "true" ? "Active" : "Inactive"}
+                      {item.status === true ? "Active" : "Inactive"}
                     </p>
                   </td>
                   <td>{item.operation}</td>
                   <td>
-                    <EditData data={item} />
+                    <EditData data={item} type={"edit"} />
                     <DeleteData id={item.id} name={item.name} />
                   </td>
                 </tr>

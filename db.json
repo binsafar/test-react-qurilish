@@ -1,58 +1,13 @@
 {
   "members": [
     {
-      "id": 1,
-      "photo": [],
-      "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
-      "email": "carlsen@armand.io",
-      "status": "true",
-      "operation": "2 min ago"
-    },
-    {
-      "id": 2,
-      "photo": [],
-      "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
-      "email": "carlsen@armand.io",
-      "status": "true",
-      "operation": "2 min ago"
-    },
-    {
-      "id": 3,
-      "photo": [],
-      "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
-      "email": "carlsen@armand.io",
-      "status": "true",
-      "operation": "2 min ago"
-    },
-    {
-      "id": 4,
-      "photo": [],
-      "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
-      "email": "carlsen@armand.io",
-      "status": "false",
-      "operation": "2 min ago"
-    },
-    {
-      "id": 5,
-      "photo": [],
-      "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
-      "email": "carlsen@armand.io",
-      "status": "true",
-      "operation": "2 min ago"
-    },
-    {
-      "id": 6,
-      "photo": [],
-      "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
-      "email": "carlsen@armand.io",
-      "status": "false",
-      "operation": "2 min ago"
+      "name": "aaaa",
+      "phone": "123123",
+      "email": "alksdmlk@gmail.com",
+      "status": true,
+      "photo": "",
+      "operation": "2 min ago",
+      "id": 7
     }
   ],
   "admins": [
@@ -60,54 +15,18 @@
       "id": 1,
       "photo": [],
       "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
+      "phone": "+4 315 23 62",
       "email": "carlsen@armand.io",
-      "status": "true",
+      "status": true,
       "operation": "2 min ago"
     },
     {
       "id": 2,
       "photo": [],
       "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
+      "phone": "+4 315 23 62",
       "email": "carlsen@armand.io",
-      "status": "true",
-      "operation": "2 min ago"
-    },
-    {
-      "id": 3,
-      "photo": [],
-      "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
-      "email": "carlsen@armand.io",
-      "status": "true",
-      "operation": "2 min ago"
-    },
-    {
-      "id": 4,
-      "photo": [],
-      "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
-      "email": "carlsen@armand.io",
-      "status": "false",
-      "operation": "2 min ago"
-    },
-    {
-      "id": 5,
-      "photo": [],
-      "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
-      "email": "carlsen@armand.io",
-      "status": "true",
-      "operation": "2 min ago"
-    },
-    {
-      "id": 6,
-      "photo": [],
-      "name": "George Lindelof",
-      "mobile": "+4 315 23 62",
-      "email": "carlsen@armand.io",
-      "status": "false",
+      "status": true,
       "operation": "2 min ago"
     }
   ]

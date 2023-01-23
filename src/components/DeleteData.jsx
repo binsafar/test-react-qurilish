@@ -10,7 +10,6 @@ function DeleteData({ id, name }) {
 
   const deleteRequest = () => {
     setModal(false);
-    console.log(id);
   };
   return (
     <>
@@ -22,8 +21,7 @@ function DeleteData({ id, name }) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         show={modal}
-        // show={true}
-        className="modal_open "
+        className="modal_open"
         onHide={() => setModal(false)}
       >
         <Modal.Header className="modal_header" closeButton>

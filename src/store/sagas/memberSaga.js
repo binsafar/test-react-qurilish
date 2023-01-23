@@ -1,5 +1,5 @@
 import { call, takeEvery, put } from "redux-saga/effects";
-import { getAllMembers } from "../api/membersApi";
+import { deleteMember, getAllMembers } from "../api/membersApi";
 import { getMembers } from "../reducer/membersReducer";
 import { GET_MEMBERS } from "../actions/membersActions";
 

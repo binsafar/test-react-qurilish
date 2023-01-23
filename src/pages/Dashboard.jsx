@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
 import Navigation from "../components/Navigation";
@@ -9,10 +9,8 @@ import { GET_MEMBERS } from "../store/actions/membersActions";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-
-  const members = useSelector((store) => store.membersReducer.members);
-  console.log("main", members);
   const dispatch = useDispatch();
+  const members = useSelector((store) => store.membersReducer.members);
 
   useEffect(() => {
     if (!localStorage.getItem("login")) {
@@ -21,6 +19,7 @@ const Dashboard = () => {
     dispatch({ type: GET_MEMBERS });
   }, []);
 
+  console.table(members);
   return (
     <>
       <Header />

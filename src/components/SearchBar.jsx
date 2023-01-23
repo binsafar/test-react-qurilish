@@ -1,10 +1,19 @@
 import { Link, useParams } from "react-router-dom";
 import { Formik } from "formik";
 import "./css/searchBar.css";
+import EditData from "./EditData";
+import filterUsers from "../service/filterUsers";
+import { getMembers } from "../store/reducer/membersReducer";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 function SearchBar() {
   const params = useParams();
   const members = params.name === "members";
+  const users = useSelector((state) => state.membersReducer.members);
+  const [inVal, setInVal] = useState({});
+
+  useEffect(() => {}, [inVal]);
 
   return (
     <div className="search_container">
@@ -23,18 +32,26 @@ function SearchBar() {
             Admins
           </Link>
         </aside>
-        <button className="btn search_add_btn">Add member</button>
+        <EditData data={[{}]} type={"add"} />
       </div>
 
       <div className="search_bottom">
         <Formik
-          initialValues={{ name: "", email: "", phone: "", status: "" }}
+          initialValues={{ name: "", email: "", phone: "", status: "All" }}
           validate={(values) => {
             const errors = {};
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
-            console.log(JSON.stringify(values, null, 2));
+            let filteredData = filterUsers(
+              values.name,
+              values.email,
+              values.phone,
+              values.status,
+              users
+            );
+            console.log(filteredData);
+            getMembers(filteredData);
             setSubmitting(false);
           }}
         >

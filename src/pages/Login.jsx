@@ -19,24 +19,16 @@ const Login = () => {
 
         <Formik
           initialValues={{ name: "", password: "", contacts: "" }}
-          // validate={(values) => {
-          //   const errors = {};
-          //   return errors;
-          // }}
           onSubmit={(values, { setSubmitting }) => {
             if (values.name === "name" && values.password === "name") {
-              console.log(values);
               localStorage.setItem("login", true);
               navigate("/dashboard/members");
-            } else {
             }
             setSubmitting(false);
           }}
         >
           {({
             values,
-            errors,
-            touched,
             handleChange,
             handleBlur,
             handleSubmit,
