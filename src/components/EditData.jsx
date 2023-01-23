@@ -116,7 +116,7 @@ function EditData({ data }) {
                 </div>
                 <label htmlFor="inputTag">
                   Photo
-                  <div className="edit_upload">
+                  <div className="edit_upload_icon">
                     <UploadIcon />
                   </div>
                   <input

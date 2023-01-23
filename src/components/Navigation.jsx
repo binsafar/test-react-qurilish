@@ -5,8 +5,10 @@ function Navigation() {
   const location = useLocation();
   const navigate = useNavigate();
   const profilePage = location.pathname === "/profile";
-  // localStorage.clear();
-  // navigate("/");
+  const logOut = () => {
+    localStorage.clear();
+    navigate("/");
+  };
 
   return (
     <>
@@ -28,7 +30,7 @@ function Navigation() {
           data-toggle="modal"
           data-target="#exampleModalCenter"
           className="nav_btn nav_link"
-          // onClick={() => logOut()}
+          onClick={() => logOut()}
         >
           Log out
         </button>

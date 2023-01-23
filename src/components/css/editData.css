@@ -10,6 +10,7 @@
   border: 1px solid #b0b7c3;
   border-radius: 7px;
   margin-bottom: 16px;
+  padding-left: 8px;
 }
 .edit_input:focus {
   outline: 1px solid #4276fb;
@@ -27,11 +28,14 @@
   justify-content: space-between;
   margin-top: 40px;
 }
-.edit_upload {
-  border: 1px #888 dashed;
+.edit_upload_icon {
   width: 76px;
   height: 76px;
+
+  border: 1px #888 dashed;
   border-radius: 8px;
+  margin: 0 !important;
+
   display: flex;
   align-items: center;
   justify-content: center;
