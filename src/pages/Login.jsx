@@ -38,6 +38,7 @@ const Login = () => {
               <input
                 type="text"
                 name="name"
+                autoFocus
                 required
                 placeholder="Name"
                 className="form-control login_input"

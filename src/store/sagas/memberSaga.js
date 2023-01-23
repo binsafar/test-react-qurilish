@@ -4,8 +4,8 @@ import { getMembers } from "../reducer/membersReducer";
 
 import { GET_MEMBERS } from "../actions/membersActions";
 
-export function* getMembersSaga() {
-  let res = yield call(getAllMembers);
+export function* getMembersSaga({ payload }) {
+  let res = yield call(getAllMembers, payload);
   yield put(getMembers(res));
 }
 

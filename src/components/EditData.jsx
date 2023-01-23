@@ -6,29 +6,35 @@ import { Formik } from "formik";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
-import {
-  ADD_MEMBER,
-  GET_MEMBERS,
-  UPDATE_MEMBER,
-} from "../store/actions/membersActions";
+import { GET_MEMBERS } from "../store/actions/membersActions";
 
 import "./css/editData.css";
 import { createMember, updateMember } from "../store/api/membersApi";
+import { useParams } from "react-router-dom";
 
 function EditData({ data, type }) {
   const [modal, setModal] = useState(false);
   const dispatch = useDispatch();
+  const params = useParams();
 
   const editRequest = (values) => {
     if (type === "edit") {
-      updateMember(data.id, values);
+      updateMember(
+        data.id,
+        { ...values, phone: values.phone },
+        `${params.name === "members" ? "members" : "admins"}`
+      );
       dispatch({
         type: GET_MEMBERS,
       });
     } else {
-      createMember(values);
+      createMember(
+        values,
+        `${params.name === "members" ? "members" : "admins"}`
+      );
       dispatch({
         type: GET_MEMBERS,
+        payload: `${params.name === "members" ? "members" : "admins"}`,
       });
     }
     setModal(false);
@@ -141,20 +147,13 @@ function EditData({ data, type }) {
                     type="checkbox"
                     value={values.status}
                     checked={values.status}
-                    disabled={values.status}
-                    // value={true}
                     className="form-check-input edit_check"
-                    onChange={(event) => console.log(event.target.value)}
-                    // onChange={handleChange}
+                    onChange={(event) => {
+                      setFieldValue("status", event.target.checked);
+                    }}
                     onBlur={handleBlur}
                   />
                 </div>
-                <Form.Check
-                  onChange={(e) => console.log(e)}
-                  type="switch"
-                  id="custom-switch"
-                  label="Check this switch"
-                />
                 <label htmlFor="inputTag">
                   Photo
                   <div className="edit_upload_icon">

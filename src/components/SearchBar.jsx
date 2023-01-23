@@ -1,12 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 import { Formik } from "formik";
-import "./css/searchBar.css";
-import EditData from "./EditData";
-import filterUsers from "../service/filterUsers";
-import { getMembers } from "../store/reducer/membersReducer";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
 import { FILTER_MEMBER } from "../store/actions/membersActions";
+import EditData from "./EditData";
+
+import "./css/searchBar.css";
 
 function SearchBar() {
   const params = useParams();
@@ -14,7 +12,6 @@ function SearchBar() {
 
   const members = params.name === "members";
   const users = useSelector((state) => state.membersReducer.members);
-  const [inVal, setInVal] = useState({});
 
   return (
     <div className="search_container">

@@ -7,14 +7,19 @@ import "./css/deleteData.css";
 import { useDispatch } from "react-redux";
 import { DELETE_MEMBER, GET_MEMBERS } from "../store/actions/membersActions";
 import { deleteMember } from "../store/api/membersApi";
+import { useParams } from "react-router-dom";
 
 function DeleteData({ id, name }) {
   const [modal, setModal] = useState(false);
+  const params = useParams();
   const dispatch = useDispatch();
 
   const deleteRequest = () => {
-    deleteMember(id);
-    dispatch({ type: GET_MEMBERS });
+    deleteMember(id, `${params.name === "members" ? "members" : "admins"}`);
+    dispatch({
+      type: GET_MEMBERS,
+      payload: `${params.name === "members" ? "members" : "admins"}`,
+    });
     setModal(false);
   };
 

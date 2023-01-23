@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Header from "../components/Header";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import SearchBar from "../components/SearchBar";
 import TableList from "../components/TableList";
@@ -10,14 +10,18 @@ import { GET_MEMBERS } from "../store/actions/membersActions";
 const Dashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const params = useParams();
   const members = useSelector((store) => store.membersReducer.members);
 
   useEffect(() => {
     if (!localStorage.getItem("login")) {
       navigate("/");
     }
-    dispatch({ type: GET_MEMBERS });
-  }, []);
+    dispatch({
+      type: GET_MEMBERS,
+      payload: `${params.name === "members" ? "members" : "admins"}`,
+    });
+  }, [params]);
 
   return (
     <>
