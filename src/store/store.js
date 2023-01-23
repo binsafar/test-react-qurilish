@@ -5,6 +5,7 @@ import membersReducer from "./reducer/membersReducer";
 import {
   watchAddMemberSaga,
   watchDeleteMemberSaga,
+  watchFilterMemberSaga,
   watchGetMemberSaga,
   watchUpdateMemberSaga,
 } from "./sagas/memberSaga";
@@ -20,3 +21,4 @@ sagaMiddleware.run(watchGetMemberSaga);
 sagaMiddleware.run(watchDeleteMemberSaga);
 sagaMiddleware.run(watchAddMemberSaga);
 sagaMiddleware.run(watchUpdateMemberSaga);
+sagaMiddleware.run(watchFilterMemberSaga);

@@ -12,17 +12,26 @@ export const getAllMembers = (memberAdmin = "members") => {
 export const createMember = (data, memberAdmin = "members") => {
   return axios
     .post("http://localhost:8080/" + memberAdmin, data)
+    .then((res) => {
+      return res.data;
+    })
     .catch((err) => console.log(err));
 };
 
 export const updateMember = (data, memberAdmin = "members") => {
   return axios
     .put("http://localhost:8080/" + memberAdmin + "/" + data.id, data)
+    .then((res) => {
+      return res.data;
+    })
     .catch((err) => console.log(err));
 };
 
 export const deleteMember = (id, memberAdmin = "members") => {
   return axios
     .delete("http://localhost:8080/" + memberAdmin + "/" + id)
+    .then((res) => {
+      return res.data;
+    })
     .catch((err) => console.log(err));
 };

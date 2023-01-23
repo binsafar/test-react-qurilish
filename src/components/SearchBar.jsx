@@ -4,16 +4,17 @@ import "./css/searchBar.css";
 import EditData from "./EditData";
 import filterUsers from "../service/filterUsers";
 import { getMembers } from "../store/reducer/membersReducer";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { FILTER_MEMBER } from "../store/actions/membersActions";
 
 function SearchBar() {
   const params = useParams();
+  const dispatch = useDispatch();
+
   const members = params.name === "members";
   const users = useSelector((state) => state.membersReducer.members);
   const [inVal, setInVal] = useState({});
-
-  useEffect(() => {}, [inVal]);
 
   return (
     <div className="search_container">
@@ -43,15 +44,16 @@ function SearchBar() {
             return errors;
           }}
           onSubmit={(values, { setSubmitting }) => {
-            let filteredData = filterUsers(
-              values.name,
-              values.email,
-              values.phone,
-              values.status,
-              users
-            );
-            console.log(filteredData);
-            getMembers(filteredData);
+            dispatch({
+              type: FILTER_MEMBER,
+              payload: {
+                name: values.name,
+                email: values.email,
+                phone: values.phone,
+                status: values.status,
+                users,
+              },
+            });
             setSubmitting(false);
           }}
         >

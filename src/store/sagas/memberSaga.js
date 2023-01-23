@@ -6,13 +6,15 @@ import { createMember } from "../api/membersApi";
 import {
   ADD_MEMBER,
   DELETE_MEMBER,
+  FILTER_MEMBER,
   GET_MEMBERS,
   UPDATE_MEMBER,
 } from "../actions/membersActions";
+import filterUsers from "../../service/filterUsers";
 
 // getAll
-export function* getMembersSaga() {
-  let res = yield call(getAllMembers);
+export function* getMembersSaga({payload}) {
+  let res = yield call(getAllMembers(payload));
   yield put(getMembers(res));
 }
 
@@ -36,9 +38,6 @@ export function* addMemberSaga({ payload }) {
   console.log(payload);
   yield call(createMember(payload));
   yield put({ type: ADD_MEMBER, payload });
-
-  let res = yield call(getAllMembers);
-  yield put(getMembers(res));
 }
 
 export function* watchAddMemberSaga() {
@@ -50,11 +49,26 @@ export function* updateMemberSaga({ payload }) {
   console.log(payload);
   yield call(updateMember(payload));
   yield put({ type: UPDATE_MEMBER, payload });
-
-  let res = yield call(getAllMembers);
-  yield put(getMembers(res));
 }
 
 export function* watchUpdateMemberSaga() {
   yield takeEvery(UPDATE_MEMBER, updateMemberSaga);
+}
+
+// filter
+export function* filterMemberSaga({ payload }) {
+  let res = yield call(
+    filterUsers(
+      payload.name,
+      payload.email,
+      payload.phone,
+      payload.status,
+      payload.users
+    )
+  );
+  yield put(getMembers(res));
+}
+
+export function* watchFilterMemberSaga() {
+  yield takeEvery(FILTER_MEMBER, filterMemberSaga);
 }

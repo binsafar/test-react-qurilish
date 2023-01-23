@@ -6,9 +6,6 @@ const filterUsers = (name, email, phone, status, users) => {
       user.phone.startsWith(phone)
   );
 
-  console.log(filter);
-  console.log(status);
-
   if (status == "All") {
     return filter;
   } else if (status == "Active") {
