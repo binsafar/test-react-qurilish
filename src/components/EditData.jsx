@@ -8,10 +8,8 @@ import "./css/editData.css";
 function EditData({ data }) {
   const [modal, setModal] = useState(false);
   const editRequest = (values) => {
-    console.log(values);
     setModal(false);
   };
-  console.log(data);
   return (
     <>
       <button onClick={() => setModal(true)} className="btn">

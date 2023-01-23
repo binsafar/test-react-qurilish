@@ -1,18 +1,17 @@
 import { call, takeEvery, put } from "redux-saga/effects";
-import axios from "axios";
+import { getAllMembers } from "../api/membersApi";
 import { getMembers } from "../reducer/membersReducer";
-
-let callApi = async ({ data }) => {
-  return await axios.create({
-    baseURL: "https://localhost:8080",
-    data,
-  });
-};
+import { GET_MEMBERS } from "../actions/membersActions";
 
 export function* getMembersSaga() {
   try {
-    let res = call()
+    let res = yield call(getAllMembers);
+    yield put(getMembers(res));
   } catch (err) {
     console.log(err);
   }
+}
+
+export function* getMembersSagaTake() {
+  yield takeEvery(GET_MEMBERS, getMembersSaga);
 }

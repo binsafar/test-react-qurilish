@@ -1,8 +1,9 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import createSagaMiddleware from "@redux-saga/core";
-
-import { getMembersSaga } from "./sagas/memberSaga";
 import membersReducer from "./reducer/membersReducer";
+
+import { getMembersSagaTake } from "./sagas/memberSaga";
+
 const sagaMiddleware = createSagaMiddleware();
 
 export default configureStore({
@@ -10,4 +11,4 @@ export default configureStore({
   middleware: [...getDefaultMiddleware({ thunk: false }), sagaMiddleware],
 });
 
-sagaMiddleware.run(getMembersSaga);
+sagaMiddleware.run(getMembersSagaTake);
